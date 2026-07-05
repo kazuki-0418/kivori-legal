@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kivori — Privacy Policy</title>
+<meta name="description" content="Kivori privacy policy — what data we hold, why, and how to remove it." />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container">
+  <header class="brand" style="display:flex;align-items:center;gap:14px;">
+    <a href="index.html">
+      <img src="kivori-logo-256.png" alt="Kivori logo" width="44" height="44" />
+      <span>Kivori</span>
+    </a>
+    <div class="lang-toggle" role="tablist" aria-label="Language">
+      <button type="button" role="tab" data-lang-btn="ja" aria-controls="lang-ja">日本語</button>
+      <button type="button" role="tab" data-lang-btn="en" aria-controls="lang-en">English</button>
+    </div>
+  </header>
+
+  <article id="lang-ja" data-lang="ja" role="tabpanel" aria-labelledby="lang-ja-btn">
+<h1>Kivori プライバシーポリシー</h1>
+<p><em>最終更新: 2026-07-05</em></p>
+<p>Kivori は、あなたが会った人を思い出すためのプライベート CRM です。本ポリシーでは、当社がどのデータを保持し、なぜ保持し、どのように削除できるかを説明します。</p>
+<p>問い合わせ先: <a href="mailto:privacy@kivori.app">privacy@kivori.app</a></p>
+<h2>1. 保存するデータ</h2>
+<p>Kivori をご利用いただくと、アプリのログイン画面に表示されるリージョンの Supabase サーバー上に以下のデータを保存します。</p>
+<ul>
+<li><strong>識別子</strong>: 初回起動時は匿名ユーザー ID。Apple / Google のサインインを行うと、OAuth 連携された ID に昇格します。</li>
+<li><strong>記録した人物</strong>: 入力した名前、会った場所、日付、短い「関係メモ」、および音声メモから AI 抽出した「メモリ」「次に聞くこと」の各行が含まれます。</li>
+<li><strong>音声メモの文字起こし</strong>: テキストのみ。音声そのものは端末上で文字起こしされ、外部には送信されません。</li>
+<li><strong>購入情報</strong>: RevenueCat がサブスクリプション状態を管理します。当社は「free」/「pro」の資格結果のみを保持し、決済情報自体は保持しません。</li>
+</ul>
+<p>以下のデータは保存しません。</p>
+<ul>
+<li>音声録音そのもの</li>
+<li>連絡先、カレンダー、その他の端末内データ</li>
+<li>端末の広告 ID</li>
+</ul>
+<h2>2. 第三者に関する情報</h2>
+<p>Kivori はあなたが会った人を思い出すためのアプリなので、保存する情報の多くはあなた以外の人物に関するものです。これをあなたのアカウントに閉じた情報として扱います。</p>
+<ul>
+<li><strong>アクセス</strong>: あなたのみが自分の行を読み取れます。Supabase の行レベルセキュリティ (RLS) で強制されます。</li>
+<li><strong>通信の暗号化</strong>: すべての読み書きは HTTPS を利用します。</li>
+<li><strong>AI 処理</strong>: 文字起こしは Supabase から言語モデル (Google Vertex AI / Gemini) に送信され、構造化された「メモリ」「次に聞くこと」を抽出します。モデルの学習には利用されません。</li>
+<li><strong>削除</strong>: アプリ内から人物を削除できます。ソフト削除が即時に反映され、30 日以内に完全に削除されます。</li>
+</ul>
+<h2>3. 分析とクラッシュレポート</h2>
+<p>アプリが役に立っているかを把握するため、PostHog により PII を含まない少数のイベントを収集します。</p>
+<ul>
+<li>アプリ起動 (<code>session_started</code>)</li>
+<li>サインイン完了 (<code>sign_in_completed</code>) — プロバイダ名のみ</li>
+<li>人物を記録した (<code>person_recorded</code>) — 内部 ID、文字起こしを取得したかの真偽値、ソース (<code>voice</code> / <code>manual</code>)</li>
+<li>人物カードを再度開いた (<code>person_opened</code>) — 内部 ID、前回の開封が 24 時間以上前かの真偽値、前回開封からの経過秒数</li>
+</ul>
+<p>人物の名前、文字起こし、メモ、プロフィールリンクなどが PostHog に送信されることは一切ありません。</p>
+<p>クラッシュレポートには Sentry を利用します。Sentry には例外の型・メッセージ・スタックトレースのみが送信されます。アプリ内のスクラバーが、メモ本文・文字起こし・人物名を含む可能性のあるログ行やブレッドクラムを事前に除去します。</p>
+<h2>4. あなたの権利</h2>
+<p>以下を行えます。</p>
+<ul>
+<li><strong>データのエクスポート</strong>: <a href="mailto:privacy@kivori.app">privacy@kivori.app</a> 宛にご連絡ください。30 日以内に JSON アーカイブをお送りします。</li>
+<li><strong>アカウントと関連データの削除</strong>: 「設定」→「アカウント削除」、または <a href="mailto:privacy@kivori.app">privacy@kivori.app</a> へのご連絡で対応します。</li>
+<li><strong>分析データ提供への同意撤回</strong>: 上記連絡先までご連絡ください。</li>
+</ul>
+<p>EU 域内のお客様に対する処理の法的根拠は、アカウント作成時のご同意、および当社によるサービス運営の正当な利益です。</p>
+<h2>5. 年齢制限</h2>
+<p>Kivori は子ども向けのアプリではありません。アカウントを作成するには 16 歳以上である必要があります。16 歳未満のデータを収集していることが判明した場合は、当該データを削除します。</p>
+<h2>6. 変更</h2>
+<p>本ポリシーは随時更新されます。重要な変更は、施行前にアプリ内でご案内します。</p>
+    <a class="doc-back" href="index.html">← Back</a>
+  </article>
+
+  <article id="lang-en" data-lang="en" role="tabpanel" aria-labelledby="lang-en-btn">
+<h1>Kivori Privacy Policy</h1>
+<p><em>Last updated: 2026-07-05</em></p>
+<p>Kivori is a private CRM: a place to remember the people you meet. This policy describes what data we hold, why, and how you can remove it.</p>
+<p>Contact: <a href="mailto:privacy@kivori.app">privacy@kivori.app</a></p>
+<h2>1. What we store</h2>
+<p>When you use Kivori, we store the following on Supabase servers hosted in the region shown on your app&#39;s login screen:</p>
+<ul>
+<li><strong>Your identifiers</strong>: an anonymous user id at first launch, upgraded (via Sign in with Apple or Google) to an OAuth-linked identity if you choose.</li>
+<li><strong>The people you record</strong>: each row contains the name you typed, the place you met, the date of the meeting, a short &quot;connection note&quot;, and any memories or follow-up questions that the AI extraction produced from your voice memo.</li>
+<li><strong>Your voice-memo transcript</strong>: text-only. The audio itself is transcribed on your device and never leaves it.</li>
+<li><strong>Your purchases</strong>: RevenueCat manages your subscription state; we hold the entitlement result (&quot;free&quot; or &quot;pro&quot;), not your payment details.</li>
+</ul>
+<p>We do <strong>not</strong> store:</p>
+<ul>
+<li>your voice recordings,</li>
+<li>your contacts, calendar, or other on-device data,</li>
+<li>your device&#39;s advertising id.</li>
+</ul>
+<h2>2. Third-party notes</h2>
+<p>Kivori helps you remember other people, so much of what it stores is about someone other than you. We treat that data as private to your account:</p>
+<ul>
+<li><strong>Access</strong>: only you can read your rows; row-level security policies on Supabase enforce this.</li>
+<li><strong>Encryption in transit</strong>: all reads and writes use HTTPS.</li>
+<li><strong>AI processing</strong>: the transcript is sent from Supabase to a language model (Google Vertex AI / Gemini) to extract structured memories and follow-up questions. It is not used to train the model.</li>
+<li><strong>Deletion</strong>: you can delete a person from the app; the record is soft-deleted immediately and removed permanently within 30 days.</li>
+</ul>
+<h2>3. Analytics and crash reporting</h2>
+<p>To understand whether the app is useful, we track a small, PII-free set of events with PostHog:</p>
+<ul>
+<li>app opens (<code>session_started</code>),</li>
+<li>sign-in completes (<code>sign_in_completed</code>) — with the provider name only,</li>
+<li>a person was recorded (<code>person_recorded</code>) — with the person&#39;s internal id, a boolean for whether a transcript was captured, and a source (&quot;voice&quot; or &quot;manual&quot;),</li>
+<li>a person&#39;s card was opened again (<code>person_opened</code>) — with the internal id, a boolean for whether the previous open was more than 24 hours ago, and the elapsed seconds since the previous open.</li>
+</ul>
+<p>None of the person&#39;s name, transcript, notes, or profile links are ever sent to PostHog.</p>
+<p>We use Sentry to collect crash reports. Sentry receives only the exception type, message, and stack trace; a scrubber inside the app strips any log line or breadcrumb whose text or field name could carry a note body, transcript, or person name.</p>
+<h2>4. Your rights</h2>
+<p>You can:</p>
+<ul>
+<li><strong>Export your data</strong> by emailing <a href="mailto:privacy@kivori.app">privacy@kivori.app</a>; we return a JSON archive within 30 days.</li>
+<li><strong>Delete your account and all associated data</strong> from Settings → Delete account, or by emailing <a href="mailto:privacy@kivori.app">privacy@kivori.app</a>.</li>
+<li><strong>Withdraw consent</strong> for analytics collection by contacting us.</li>
+</ul>
+<p>For EU residents, the legal basis for processing is your consent when you create an account, and our legitimate interest in operating the service.</p>
+<h2>5. Age requirement</h2>
+<p>Kivori is not intended for children. To create an account you must be at least 16 years old. If we learn that we have collected data from a child under 16, we will delete it.</p>
+<h2>6. Changes</h2>
+<p>We will update this policy from time to time. Material changes are announced in-app before they take effect.</p>
+    <a class="doc-back" href="index.html">← Back</a>
+  </article>
+</div>
+
+<script>
+(function () {
+  var KEY = 'kivori.legal.lang';
+  var supported = ['ja', 'en'];
+  var stored = null;
+  try { stored = localStorage.getItem(KEY); } catch (e) {}
+  var initial = supported.indexOf(stored) >= 0
+    ? stored
+    : ((navigator.language || 'ja').toLowerCase().indexOf('ja') === 0 ? 'ja' : 'en');
+  setLang(initial);
+
+  document.querySelectorAll('[data-lang-btn]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var lang = btn.getAttribute('data-lang-btn');
+      setLang(lang);
+      try { localStorage.setItem(KEY, lang); } catch (e) {}
+    });
+  });
+
+  function setLang(lang) {
+    document.documentElement.setAttribute('lang', lang);
+    document.querySelectorAll('[data-lang]').forEach(function (el) {
+      el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+    });
+    document.querySelectorAll('[data-lang-btn]').forEach(function (b) {
+      var active = b.getAttribute('data-lang-btn') === lang;
+      b.classList.toggle('active', active);
+      b.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+  }
+})();
+</script>
+</body>
+</html>
